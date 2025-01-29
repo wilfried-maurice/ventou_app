@@ -12,7 +12,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final data = datas[index % datas.length];
-    const borderRadius = BorderRadius.all(Radius.circular(8));
+    const borderRadius = BorderRadius.all(Radius.circular(22));
     return InkWell(
       borderRadius: borderRadius,
       onTap: () => ontap?.call(data),
@@ -38,6 +38,14 @@ class ProductCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: borderRadius,
                 // color: Color(0xffeeeeee),
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0, 0),
+                    blurRadius: 2,
+                    spreadRadius: 1,
+                    color: Colors.white,
+                  ),
+                ],
               ),
               child: Stack(
                 children: [
@@ -52,8 +60,8 @@ class ProductCard extends StatelessWidget {
                     right: 16,
                     child: Image.asset(
                       'assets/icons/not_collected@2x.png',
-                      width: 15,
-                      height: 15,
+                      width: 21,
+                      height: 21,
                     ),
                   )
                 ],
