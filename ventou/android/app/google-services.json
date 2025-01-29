@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "937238551734",
+    "project_id": "jigue-aafbe",
+    "storage_bucket": "jigue-aafbe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937238551734:android:4f01ed6b91e649dcd6da17",
+        "android_client_info": {
+          "package_name": "com.example.ventou"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc3Vn6ANdX2Rko9eVhB8qt56RmsBldoyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
