@@ -12,9 +12,8 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final data = datas[index % datas.length];
-    const borderRadius = BorderRadius.all(Radius.circular(22));
+    const borderRadius = BorderRadius.all(Radius.circular(12));
     return InkWell(
-      borderRadius: borderRadius,
       onTap: () => ontap?.call(data),
       child: Container(
         decoration: BoxDecoration(
@@ -34,18 +33,12 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: borderRadius,
-                // color: Color(0xffeeeeee),
-                boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(0, 0),
-                    blurRadius: 2,
-                    spreadRadius: 1,
-                    color: Colors.white,
-                  ),
-                ],
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft:
+                    borderRadius.topLeft, // Bordure arrondie en haut à gauche
+                topRight:
+                    borderRadius.topRight, // Bordure arrondie en haut à droite
               ),
               child: Stack(
                 children: [
@@ -74,7 +67,7 @@ class ProductCard extends StatelessWidget {
                 child: Text(
                   data.title,
                   style: const TextStyle(
-                    color: Color(0xFF212121),
+                    color: Color(0xFF2E384D),
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
                   ),
@@ -90,11 +83,11 @@ class ProductCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6.0),
               child: Text(
-                '\$${data.price.toStringAsFixed(2)}',
+                '${data.price.toStringAsFixed(2)} Fcfa',
                 style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF212121),
+                  color: Color(0xFF2E384D),
                 ),
               ),
             )
@@ -107,33 +100,33 @@ class ProductCard extends StatelessWidget {
   Widget _buildSoldPoint(double star, int sold) {
     return Row(
       children: [
-        Image.asset('assets/icons/start@2x.png', width: 20, height: 20),
-        const SizedBox(width: 8),
-        Text(
-          '$star',
-          style: const TextStyle(
-            color: Color(0xFF616161),
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        const SizedBox(width: 8),
+        // Image.asset('assets/icons/start@2x.png', width: 20, height: 20),
+        // const SizedBox(width: 8),
+        // Text(
+        //   '$star',
+        //   style: const TextStyle(
+        //     color: Color(0xFF616161),
+        //     fontSize: 14,
+        //     fontWeight: FontWeight.w500,
+        //   ),
+        // ),
+        // const SizedBox(width: 8),
         const Text(
-          '|',
+          'Ref',
           style: TextStyle(
-              fontWeight: FontWeight.w500,
-              color: Color(0xFF616161),
+              fontWeight: FontWeight.w700,
+              color: Color(0xFF2E384D),
               fontSize: 14),
         ),
         const SizedBox(width: 8),
         Container(
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(6)),
-            color: const Color(0xFF101010).withOpacity(0.08),
+            color: const Color(0xFF2E384D).withAlpha(7),
           ),
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
           child: Text(
-            '$sold sold',
+            '$sold',
             style: const TextStyle(
               color: Color(0xFF35383F),
               fontWeight: FontWeight.w500,

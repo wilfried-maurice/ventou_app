@@ -12,7 +12,7 @@ class ShopDetailScreen extends StatefulWidget {
 }
 
 class _ShopDetailScreenState extends State<ShopDetailScreen> {
-  int _quantity = 0;
+  final int _quantity = 0;
   bool _iscollected = false;
 
   @override
@@ -213,7 +213,7 @@ class _ShopDetailScreenState extends State<ShopDetailScreen> {
             borderRadius: const BorderRadius.all(
               Radius.circular(29),
             ),
-            color: const Color(0xFF101010),
+            color: const Color(0xFF361d32),
             boxShadow: [
               BoxShadow(
                 offset: const Offset(4, 8),
@@ -233,10 +233,13 @@ class _ShopDetailScreenState extends State<ShopDetailScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/icons/detail/bag@2x.png', scale: 2),
+                  Image.asset(
+                    'assets/icons/detail/bag@2x.png',
+                    scale: 2,
+                  ),
                   const SizedBox(width: 16),
                   const Text(
-                    'Add to Cart',
+                    'Commander',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 13,
@@ -266,13 +269,22 @@ class _ShopDetailScreenState extends State<ShopDetailScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
-                    Text('Total price',
-                        style:
-                            TextStyle(color: Color(0xFF757575), fontSize: 12)),
+                    Text(
+                      'Prix Total',
+                      style: TextStyle(
+                        color: Color(0xFF543c52),
+                        fontSize: 12,
+                      ),
+                    ),
                     SizedBox(height: 6),
-                    Text('\$280.00',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 24)),
+                    Text(
+                      '280.00 Fcfa',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF543c52),
+                        fontSize: 18,
+                      ),
+                    ),
                   ],
                 ),
                 buildAddCard()

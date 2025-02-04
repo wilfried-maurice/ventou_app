@@ -11,11 +11,11 @@ class ImagesPath {
 }
 
 class AppColor {
-  static Color kPrimary = const Color(0XFF434856);
-  static Color kPrimary2 = const Color(0XFF81889D);
-  static Color kPrimary3 = const Color(0XFF6B6AB3);
-  static Color kPrimary4 = const Color(0XFFD43481);
-  static Color kPrimary5 = const Color(0XFFA9AEBC);
+  static Color kPrimary = const Color(0XFF361d32);
+  static Color kPrimary2 = const Color(0XFF543c52);
+  static Color kPrimary3 = const Color(0XFFf55951);
+  static Color kPrimary4 = const Color(0XFFedd2cb);
+  static Color kPrimary5 = const Color(0XFFf1e8e6);
 
   static Color kWhite = const Color(0XFFFFFFFF);
   static Color kWhite1 = const Color(0XFFF8F8F8);

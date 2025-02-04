@@ -13,6 +13,7 @@ dependencies:
 
   # Firebase
   cloud_firestore: ^4.9.0
+  image_picker: ^1.1.2
 
   # Custom Repository
   user_repository:

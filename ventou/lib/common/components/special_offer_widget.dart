@@ -46,7 +46,12 @@ class SpecialOfferWidget extends StatelessWidget {
             ),
           ),
         ),
-        Image.asset(data.icon),
+        ClipRRect(
+            borderRadius: BorderRadius.only(
+              topRight: const Radius.circular(12),
+              bottomRight: const Radius.circular(12),
+            ),
+            child: Image.asset(data.icon)),
       ],
     );
   }

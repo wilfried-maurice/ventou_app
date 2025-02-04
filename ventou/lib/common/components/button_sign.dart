@@ -63,9 +63,8 @@ class _ButtonState extends State<Button> with SingleTickerProviderStateMixin {
           ),
         ),
         child: Card(
-          elevation: 5,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100),
+            borderRadius: BorderRadius.circular(22),
           ),
           child: Container(
             height: widget.height ?? 50,
@@ -75,14 +74,14 @@ class _ButtonState extends State<Button> with SingleTickerProviderStateMixin {
               gradient: LinearGradient(
                 colors: [
                   AppColor.kPrimary2,
-                  AppColor.kPrimary3,
+                  AppColor.kPrimary2,
                   AppColor.kPrimary2,
                 ],
                 stops: const [0.5, 1.2, 1.4],
                 begin: const Alignment(0, -3),
                 end: const Alignment(1, 1),
               ),
-              borderRadius: BorderRadius.circular(widget.borderRadius ?? 50),
+              borderRadius: BorderRadius.circular(widget.borderRadius ?? 15),
             ),
             child: Text(
               widget.text,
