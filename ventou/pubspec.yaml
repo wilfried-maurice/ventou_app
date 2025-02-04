@@ -54,7 +54,7 @@ dependencies:
   post_repository:
       path: packages/post_repository
   flutter_dotenv: ^5.2.1
-  shared_preferences: ^2.4.0
+  shared_preferences: ^2.5.1
   easy_localization: ^3.0.7
   permission_handler: ^11.3.1
   device_info_plus: ^9.1.2

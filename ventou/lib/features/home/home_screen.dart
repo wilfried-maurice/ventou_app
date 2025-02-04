@@ -129,13 +129,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 50,
                             height: 50,
                             decoration: BoxDecoration(
-                                color: Colors.grey,
-                                shape: BoxShape.circle,
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                      state.user!.picture!,
-                                    ),
-                                    fit: BoxFit.cover)),
+                              color: Colors.grey,
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                    state.user!.picture!,
+                                  ),
+                                  fit: BoxFit.cover),
+                            ),
                           ),
                     const SizedBox(width: 10),
                     Text(

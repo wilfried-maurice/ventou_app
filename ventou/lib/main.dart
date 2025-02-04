@@ -1,8 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_repository/user_repository.dart';
 import 'package:ventou/app.dart';
+import 'package:ventou/core/services/shared_preferences_service.dart';
+import 'package:ventou/core/services/theme_service.dart';
+import 'package:ventou/core/utils/localization/localization_manager.dart';
+import 'package:ventou/features/theme/bloc/theme_bloc.dart';
 import 'package:ventou/simple_bloc_observer.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -77,7 +82,11 @@ import 'firebase_options.dart';
 // }
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SharedPreferencesService.instance.init();
   await Firebase.initializeApp();
+  await EasyLocalization.ensureInitialized();
+  ThemeService.getTheme();
+
   Bloc.observer = SimpleBlocObserver();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -86,6 +95,13 @@ void main() async {
     [DeviceOrientation.portraitUp],
   );
   runApp(
-    MainApp(FirebaseUserRepository()),
+    LocalizationManager(
+      child: BlocProvider(
+        create: (context) => ThemeBloc(),
+        child: MainApp(
+          FirebaseUserRepository(),
+        ),
+      ),
+    ),
   );
 }

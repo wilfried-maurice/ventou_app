@@ -24,29 +24,27 @@ class _SpecialOffersState extends State<SpecialOffers> {
     return Column(
       children: [
         _buildTitle(),
-        const SizedBox(height: 11),
+        const SizedBox(height: 5),
         Stack(children: [
-          Card(
-            child: Container(
-              height: 181,
-              decoration: const BoxDecoration(
-                  color: Color(0xFFE7E7E7),
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  boxShadow: [
-                ]
-              ),
-              child: PageView.builder(
-                physics: PageScrollPhysics(),
-                itemBuilder: (context, index) {
-                  final data = specials[index];
-                  return SpecialOfferWidget(context, data: data, index: index);
-                },
-                itemCount: specials.length,
-                allowImplicitScrolling: true,
-                onPageChanged: (value) {
-                  setState(() => selectIndex = value);
-                },
-              ),
+          Container(
+            height: 181,
+            decoration: const BoxDecoration(
+                color: Color(0xFFE7E7E7),
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+                boxShadow: [
+              ]
+            ),
+            child: PageView.builder(
+              physics: PageScrollPhysics(),
+              itemBuilder: (context, index) {
+                final data = specials[index];
+                return SpecialOfferWidget(context, data: data, index: index);
+              },
+              itemCount: specials.length,
+              allowImplicitScrolling: true,
+              onPageChanged: (value) {
+                setState(() => selectIndex = value);
+              },
             ),
           ),
           _buildPageIndicator()
@@ -106,9 +104,10 @@ class _SpecialOffersState extends State<SpecialOffers> {
         const Text(
           'Speciale Offres',
           style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 14,
-              color: Color(0xFF212121)),
+            fontWeight: FontWeight.w600,
+            fontSize: 14,
+            color: Color(0xFF2E384D),
+          ),
         ),
         TextButton(
           onPressed: () => widget.onTapSeeAll?.call(),
@@ -117,7 +116,7 @@ class _SpecialOffersState extends State<SpecialOffers> {
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 14,
-              color: Color(0xFF212121),
+              color: Color(0xFF2E384D),
             ),
           ),
         ),
